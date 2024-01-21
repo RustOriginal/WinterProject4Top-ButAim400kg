@@ -25,19 +25,19 @@ public:
         float y = static_cast<float>(rand() % (windowHeight - size));
         shape.setPosition(x, y);
 
-        growing = true;  // Начинаем увеличение при каждом появлении
+        growing = true;  
     }
 
     void decreaseSize() {
         size = std::max(0, size - targetSizeIncreaseRate);
         shape.setSize(sf::Vector2f(size, size));
-        growing = false;  // После уменьшения переходим в состояние увеличения
+        growing = false;  
     }
 
     void increaseSize() {
         size += targetSizeIncreaseRate;
         shape.setSize(sf::Vector2f(size, size));
-        growing = true;  // После увеличения переходим в состояние уменьшения
+        growing = true;  
     }
 
     void draw(sf::RenderWindow& window) {
